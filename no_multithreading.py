@@ -1,7 +1,10 @@
 import time
 from typing import List
 
-# This script demonstrates how Python runs square and cube functions sequentially
+# This script demonstrates the sequential execution of two functions in Python without multithreading.
+# The square_list() and cube_list() functions are run one after the other.
+# Since each function includes a delay (time.sleep), the total time taken is the sum of both,
+# making it noticeably slower compared to the multithreaded version.
 
 
 def square_list(nums: List[int], result: List[int]) -> None:
