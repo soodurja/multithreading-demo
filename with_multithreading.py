@@ -1,0 +1,37 @@
+import threading
+import time
+from typing import List
+
+def square_list(nums: List[int], result: List[int]) -> None:
+    for num in nums:
+        time.sleep(1)
+        print(f"Squaring the number {num}")
+        result.append(num ** 2)
+
+def cube_list(nums: List[int], result: List[int]) -> None:
+    for num in nums:
+        time.sleep(1)
+        print(f"Cubing the number {num}")
+        result.append(num ** 3)
+
+if __name__ == "__main__":
+    nums = [1, 2, 3, 4]
+    squared_result, cubed_result = [], []
+
+    start_time = time.time()
+
+    # Run with multithreading
+    t1 = threading.Thread(target=square_list, args=(nums, squared_result))
+    t2 = threading.Thread(target=cube_list, args=(nums, cubed_result))
+
+    t1.start()
+    t2.start()
+
+    t1.join()
+    t2.join()
+
+    end_time = time.time()
+
+    print(f"Squared list: {squared_result}")
+    print(f"Cubed list: {cubed_result}")
+    print(f"Time taken: {end_time - start_time:.2f} seconds")
