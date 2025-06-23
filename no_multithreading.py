@@ -1,6 +1,9 @@
 import time
 from typing import List
 
+# This script demonstrates how Python runs square and cube functions sequentially
+
+
 def square_list(nums: List[int], result: List[int]) -> None:
     for num in nums:
         time.sleep(1)
