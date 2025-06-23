@@ -25,7 +25,6 @@ if __name__ == "__main__":
 
     start_time = time.time()
 
-    # Without Multithreading, we sequentially call the two functions
     square_list(list, squared_result)
     cube_list(list, cubed_result)
 
