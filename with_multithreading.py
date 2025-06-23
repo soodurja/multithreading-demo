@@ -2,6 +2,8 @@ import threading
 import time
 from typing import List
 
+# This script demonstrates the use of Python's threading module for concurrent execution
+
 def square_list(nums: List[int], result: List[int]) -> None:
     for num in nums:
         time.sleep(1)
