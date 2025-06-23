@@ -15,18 +15,21 @@ def cube_list(nums: List[int], result: List[int]) -> None:
         result.append(num ** 3)
 
 if __name__ == "__main__":
-    nums = [1, 2, 3, 4]
+    list = [1, 2, 3, 4]
     squared_result, cubed_result = [], []
 
     start_time = time.time()
 
-    # Run with multithreading
-    t1 = threading.Thread(target=square_list, args=(nums, squared_result))
-    t2 = threading.Thread(target=cube_list, args=(nums, cubed_result))
+    # With Multithreading
+    # Create the two threads
+    t1 = threading.Thread(target=square_list, args=(list, squared_result))
+    t2 = threading.Thread(target=cube_list, args=(list, cubed_result))
 
+    # Start the threads
     t1.start()
     t2.start()
 
+    # Wait for the threads to finish
     t1.join()
     t2.join()
 
@@ -34,4 +37,8 @@ if __name__ == "__main__":
 
     print(f"Squared list: {squared_result}")
     print(f"Cubed list: {cubed_result}")
-    print(f"Time taken: {end_time - start_time:.2f} seconds")
+
+    print(f"Time taken: {end_time - start_time}")
+
+
+
