@@ -2,7 +2,10 @@ import threading
 import time
 from typing import List
 
-# This script demonstrates the use of Python's threading module for concurrent execution
+# This script demonstrates how to use Python's threading module to run two functions concurrently. 
+# The square_list() and cube_list() functions are executed in parallel using two threads. 
+# Because both functions include a delay (time.sleep), threading helps reduce total execution time 
+# by allowing them to run simultaneously rather than waiting for one to finish before starting the other. 
 
 def square_list(nums: List[int], result: List[int]) -> None:
     for num in nums:
